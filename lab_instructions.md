@@ -10,9 +10,21 @@ Purpose: What the program is about
 """
 ```
 
-For your file names, please name each lab by the following `{specificlabname}_yourlastnamethenfirstnameinitials`
+For your file names, please name each lab by the following `<specificlabname>_<yourlastname><firstnameinitials>.py`
 
-So for example, If I am turning in Lab 4e, the file name is `clean_lyrics_galangmi.py`
+So for example, If I am turning in Lab 4e, the file name would be `clean_lyrics_galangmi.py`
+
+These challenges are solvable with what you already know. There are hints\* given for each in collapsable sections that look like this:
+
+<details>
+<summary><b><kbd>🧐 Hint Please!</kbd></b></summary>
+
+> ### here's some review!
+> blah blah blah
+
+</details>
+
+\* programming trains you to deconstruct complex problems into logical steps, invent creative solutions from scratch, and view failures as data points to adapt to change. Those are the skills you really want to learn. If you rely on the hints without spending time and effort trying to solve the problem yourself however, you will learn less of those skills which will make your future programming endeavors, classes, and tests more difficult for you. For example, the last challenge in Lab 4 has been very difficult for past students. If you practice doing the challenges up until that one without using the hints, you will more likely have an eaasier time solving that challenge.. (hopefully!)
 
 ## Lab 4a: Palindromes
 A palindrome is a word, phrase, or sequence that reads the same forwards and backwards (ignoring spaces, punctuation, and capitalization). Examples: "racecar", "madam", "taco cat", "A man, a plan, a canal: Panama!"
@@ -28,75 +40,128 @@ Here are some test cases for you to work with:
 - racecar
 - madam
 - kayak
+- Bob
 
-Extra credit (5pts): Have the program also work for punctuations.
+Extra credit (5pts): Have the program also work for strings with punctuation and whitespace.
 - Taco Cat
 - A man, a plan, a canal: Panama!
 
-There a many ways to do this, so the following recommended functions: `lower()`, `replace()`, `strip()`, `reversed()`, `for` or `while`
+
+<details>
+<summary><b><kbd>🧐 Hint Please!</kbd></b></summary>
+
+> ### There a many ways to do this. 
+> Thinking about how you can use one or more of the following functions may help: `lower()`, `replace()`, `strip()`, `reversed()`, `split()`, `join()`, `for` or `while`
+
+</details>
 
 ---
 
-## Lab 4b and 4c: Decimal to Hexademical and Hexadecimal to Decimal
+## Lab 4b and 4c: Number System Base Conversion (Radix Conversion)
 
-Lets understand how hex works:
+We talked about how we use different number systems for different purposes. Decimal for every day human usage, binary for computers, hexidecimal for representing colors. In these challenges, we will be exploring changing between given bases.
 
-**The Digits**: Hexadecimal uses 16 digits:
+Do you remember how to convert from decimal to hex?
 
-- 0 - 9 represents values 0 to 9
-- A - F represents values 10 - 15
+<details>
+<summary><b><kbd>🧐 Hint Please!</kbd></b></summary>
 
-For example, lets take the 3410. Like in binary and octal, to convert this to hexadecimal, we divide by 16. Keep track of the remainder as this is our hexadecimal bit, then use the quotient to continue dividing. Keep repeating this until our quotient is zero:
+> ### Lets understand how hex works:
+> 
+> **The Digits**: Hexadecimal uses 16 digits:
+> - 0 - 9 represents values 0 to 9
+> - A - F represents values 10 - 15
+> 
+> For example, lets take the decimal number 3410. Like in binary and octal, to convert this to hexadecimal, we divide by the base we are converting to (16 for hex). Keep track of the remainder as this is our hexadecimal bit, then use the quotient to continue dividing. Keep repeating this until our quotient is zero:
+> 
+> | Step | Division | Quotient | Remainder | Remainder in Hex |
+> |:----:|:--------:|:--------:|:---------:|:----------------:|
+> | 1 | 3410 ÷ 16 | 213 | 2 | 2 |
+> | 2 | 213 ÷ 16 | 13 | 5 | 5 |
+> | 3 | 13 ÷ 16 | 0 | 13 | D |
+> 
+> **Note:** Read the remainders from **bottom to top**: D 5 2
 
-| Step | Division | Quotient | Remainder | Remainder in Hex |
-|:----:|:--------:|:--------:|:---------:|:----------------:|
-| 1 | 3410 ÷ 16 | 213 | 2 | 2 |
-| 2 | 213 ÷ 16 | 13 | 5 | 5 |
-| 3 | 13 ÷ 16 | 0 | 13 | D |
+</details>
 
-**Note:** Read the remainders from **bottom to top**: D 5 2
+How about converting back from hex to decimal?
 
-To convert back, just like decimal has ones place ($10^0$), tens place ($10^1$), hundreds place ($10^2$), hex has places that are powers of 16. each bit is multiplied by a power of 16, and added together.
+<details>
+<summary><b><kbd>🧐 Hint Please!</kbd></b></summary>
 
-So for example: `D52`
+> To convert back, just like decimal has ones place ($10^0$), tens place ($10^1$), hundreds place ($10^2$), hex has places that are powers of 16. each bit is multiplied by a power of 16, and added together.
+> 
+> So for example: `D52`
+> 
+> $$ 2 \times 16^0 = 2 \\ 5 \times 16^1 = 80 \\ D \times 16^2 = 13 * 256 = 3328 $$
+> 
+> Thus `D52 = 2 + 80 + 3328 = 3410`
 
-$$ 2 \times 16^0 = 2 \\ 5 \times 16^1 = 80 \\ D \times 16^2 = 13 * 256 = 3328 $$
+</details>
 
-Thus `D52 = 2 + 80 + 3328 = 3410`
+### Lab4b
 
-Create two programs `decimal_to_hexadecimal.py` and `hexaedcimal_to_decimal.py` that converts decimal to hexadecimal and converts it back from hexadecimal to decimal.
+Create a program `decimal_to_hexadecimal.py` that converts decimal to hexadecimal. This will be your **Lab 4B**.
 
 Just note that it is much easier to have the output (hexadecimal) be in a string since we have to convert values remainders 10-15 to A-F. 
 
-***Recommended Functions and Operations***
+<details>
+<summary><b><kbd>🧐 Hint Please!</kbd></b></summary>
 
-**For lab4b:**
-| Category | Functions/Operations | Purpose |
-|:---------|:---------------------|:--------|
-| **Math Operations** | `//` (integer division) | Get quotient |
-| | `%` (modulo) | Get remainder |
-| | `while` loop | Repeat division until quotient is 0 |
-| **String Building** | String concatenation (`+`) | Build hex string from remainders |
-| | `str()` | Convert numbers to strings |
-| | `""` (empty string) | Start with empty string |
-| **Digit Conversion** | `if/elif/else` | Convert 10-15 to A-F |
-| | `0-9` digits | Keep as-is |
-| | `10-15` | Map to 'A' through 'F' |
+> ***Some Useful Tools***
+> 
+> | Category | Functions/Operations | Purpose |
+> |:---------|:---------------------|:--------|
+> | **Math Operations** | `//` (integer division) | Get quotient |
+> | | `%` (modulo) | Get remainder |
+> | | `while` loop | Repeat division until quotient is 0 |
+> | **String Building** | String concatenation (`+`) | Build hex string from remainders |
+> | | `str()` | Convert numbers to strings |
+> | | `""` (empty string) | Start with empty string |
+> | **Digit Conversion** | `if/elif/else` | Convert 10-15 to A-F |
+> | | `0-9` digits | Keep as-is |
+> | | `10-15` | Map to 'A' through 'F' |
 
----
+</details>
 
-**For lab4e:**
-| Category | Functions/Operations | Purpose |
-|:---------|:---------------------|:--------|
-| **String Processing** | `len()` | Get length of hex string |
-| | String indexing `[i]` | Access each digit |
-| | `.upper()` | Convert to uppercase for consistent processing |
-| | `for` loop | Iterate through each digit |
-| **Digit Conversion** | `if/elif/else` | Convert A-F to 10-15 |
-| | `int()` | Convert '0'-'9' to integers |
-| **Math Operations** | `**` (exponentiation) | Calculate powers of 16 |
-| | `*` (multiplication) | Multiply digit by place value |
-| | `+` (addition) | Accumulate total |
+### Lab 4c
+
+Our base can be whatever number we want though, and so can the symbols we use as our digits. We don't have to start with the numbers we know and love. 
+
+For **Lab 4c**, we will be using a number system with base 3 and for the digits, we will be using these emojis: 
+
+😭😐🥰
+
+form left to right, they represent **none** (😭) to the **maximum value** (🥰) that can be represented by one digit in this number system.
+
+We will call this number system "emotional".
+
+Create a program `emotional_to_decimal.py` that converts emotional to decimal.
+
+<details>
+<summary><b><kbd>🧐 Hint Please!</kbd></b></summary>
+
+> ***Things to think about***
+> 
+> * What number represents "none"?
+> * What would be the maximum number representable by a digit in base 3? 
+> * What about in base 2?
+> * If you write out what the number would be using regular numbers as digits, does that make it easier to understand? can you work backwards from there?
+> 
+> ***Some Useful Tools***
+> 
+> | Category | Functions/Operations | Purpose |
+> |:---------|:---------------------|:--------|
+> | **String Processing** | `len()` | Get length of hex string |
+> | | String indexing `a[i]` | Access each digit |
+> | | `.upper()` | Convert to uppercase for consistent processing |
+> | | `for` loop | Iterate through each digit |
+> | **Digit Conversion** | `if/elif/else` | Convert eomtions to numbers |
+> | **Math Operations** | `**` (exponentiation) | Calculate powers of 16 |
+> | | `*` (multiplication) | Multiply digit by place value |
+> | | `+` (addition) | Accumulate total |
+
+</details>
 
 ---
 
@@ -118,14 +183,19 @@ The program should do the following:
 
 You have some textfiles of song lyrics that you can test on: `rap_god.txt`, `snooze.txt`
 
-Some general tips:
-- You can create your list of curse words and check if a word is in that list.
-- Remember, you can iterate through a line by converting a line into a list 
-- Alternatevely, you can use the `replace()` function for strings (however, this is much trickier)
-- You can nest a read and write function
-- You can account for different 
+<details>
+<summary><b><kbd>🧐 Hint Please!</kbd></b></summary>
 
-Recommended functions/operations: `open()`, `readlines()`, `split()`, `lower()`, `replace()`
+> ***Some general tips***
+> - You can create your list of curse words and check if a word is in that list.
+> - Remember, you can iterate through a line by converting a line into a list 
+> - Alternatevely, you can use the `replace()` function for strings (however, this is much trickier)
+> - You can nest a read and write function
+> - You can account for different 
+> 
+> Some functions/operations that may serve useful: `open()`, `readlines()`, `split()`, `lower> ()`, `replace()`
+
+</details>
 
 ---
 
@@ -143,19 +213,22 @@ Jose Cruz,82.3,100,91.4,87.0,75.5
 Ana Leon-Guerrero,78.5,92.5,88.0,91.2,82.8
 ```
 
-Your job is to read the textfile, calculate each students final grade and letter grade (using the same grade scale from lab3b) and save the results into a new text file called `graded.txt`.
+Your job is to create a program called `grade_reporter.py` that reads the textfile, calculates each student's final grade and letter grade (using the same grade scale from lab3b) and saves the results into a new text file called `graded.txt`.
 
-Some pointers: 
+<details>
+<summary><b><kbd>🧐 Hint Please!</kbd></b></summary>
 
-- Please view the text file and understand how you can grab the contents and plug those numbers into your lab 3b to get a letter grade. Maybe you can split them into a list and read the numbers?
+> Some pointers: 
+> 
+> - Please view the text file and understand how you can grab the contents and plug those numbers into your lab 3b to get a letter grade. Maybe you can split them into a list and read the numbers?
+> 
+> - You also need to think on how you can write these as well
+> 
+> Possibly Helpful Functions/Operations: `open(filename, 'r')`, `open(filename, 'w')`, `readlines()` or `for line in file`, `strip()` to remove the newline (`\n`), `float()`, `split(',')`. 
+> 
+> You also need understanding of indexing.
 
-- You also need to think on how you can write these as well
-
-Please create a program called `grade_reporter.py` that does the following above.
-
-Recommended Functions/Operations: `open(filename, 'r')`, `open(filename, 'w')`, `readlines()` or `for line in file`, `strip()` to remove the newline (`\n`), `float()`, `split(',')`. 
-
-You also need understanding of indexing.
+</details>
 
 ---
 
@@ -288,6 +361,10 @@ Create a program called `void_decipher.py` that:
 - Saves the full decoded conversation to `void_decoded.txt`
 - Key intelligence extracted (what are they planning? when? where? what equipment?)
 
-Recommended functions/operations: `ord()`, `open(filename, 'r')`, `open(filename, 'w')`
 
+<details>
+<summary><b><kbd>🧐 Hint Please!</kbd></b></summary>
 
+> Some Gagdets at Your Disposal: `ord()`, `open(filename, 'r')`, `open(filename, 'w')`
+
+</details>
