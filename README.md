@@ -117,6 +117,7 @@ Function | Description | Example | Result
 ---|---|---|---
 `chr(integer)` | Returns the Unicode (extension of ASCII) character represented by the `integer` given | `chr(65)` <br><br> `chr(129505)` | `'A'` <br><br> `'🧡'`
 `ord(character)` | Returns the Unicode (extension of ASCII) number assigned to the given `character`. This is the inverse of `chr()` | `ord('A')` <br><br> `ord('🧡'))` | `65` <br><br> `129505`
+`time.sleep(seconds)` | Suspends code execution for `seconds` amount of seconds. A float can be given for subsecond precision. Ensure that you've imported the `time` module prior to running this: `import time` | `time.sleep(5)` | * does nothing for 5 seconds
 
 
 ## Grading Criteria
@@ -125,10 +126,12 @@ Like the previous labs, I will grade for functionality, but documentation will a
 
 Lab | Description | Comments/Documentation | Functionality | Total
 ---|---|---|---|---
-Lab4a | Palindrome | 5pts | 5pts | 10pts
-Lab4b | Decimal to Hexademical  | 4pts | 6pts | 10pts
-Lab4c | Emotional to Decimal | 4pts | 6pts | 10pts
-Lab4d | Clean lyrics! | 10pts | 10pts | 20pts
-Lab4e | The grade reporter | 10pts | 15pts | 25pts
-Lab4f | D̵̖͂E̶̯͂̈́Ć̶̼͔̎Ò̵͉͆D̶͒̅͜͜Ë̷͈̟́ ̵̯̙̆͒T̶̛͈̉H̴̭̎E̵̥̞̍̕ ̴̢̈͜V̶̫͈̈O̶͕͋̔I̵̪͝͝ͅD̵̖͑ ̴̣̤̅—̴̥̮̆͆ ̵̬͑̔O̷̦͓̿P̵̧̙̑Ę̷͗͜R̵̨͓͝A̷̠͝͝Ṫ̶̳̦Î̵̠͔Ò̷̩̤͑N̶͚̝̽̕:̴͍̱̓̅ ̸̹̔M̸͚͒A̷̦͛Ṋ̷̾̄ ̶͚̳͌͋Ȉ̴̫̭N̵̮̥̋̒ ̴͍͚͒Ť̴̡̯̎Ḥ̴̛͛Ę̸̖̽ ̷̟̽M̷̧͌̅Í̸̡̬̊D̷̘̩̈̉D̸͉̍L̷̻̒̏Ȩ̴̗́| 10pts | 15 pts | 25pts
-Total | | | | **100pts**
+Lab4a | Palindromes | 6pts | 7pts | 13pts `+2pts`*
+Lab4b | Decimal to Hexademical  | 6pts | 9pts | 15pts
+Lab4c | Emotional to Decimal | 6pts | 10pts | 16pts
+Lab4d | Clean lyrics! | 12pts | 15pts | 27pts
+Lab4e | The grade reporter | 12pts | 19pts | 31pts
+Lab4f | D̵̖͂E̶̯͂̈́Ć̶̼͔̎Ò̵͉͆D̶͒̅͜͜Ë̷͈̟́ ̵̯̙̆͒T̶̛͈̉H̴̭̎E̵̥̞̍̕ ̴̢̈͜V̶̫͈̈O̶͕͋̔I̵̪͝͝ͅD̵̖͑ ̴̣̤̅—̴̥̮̆͆ ̵̬͑̔O̷̦͓̿P̵̧̙̑Ę̷͗͜R̵̨͓͝A̷̠͝͝Ṫ̶̳̦Î̵̠͔Ò̷̩̤͑N̶͚̝̽̕:̴͍̱̓̅ ̸̹̔M̸͚͒A̷̦͛Ṋ̷̾̄ ̶͚̳͌͋Ȉ̴̫̭N̵̮̥̋̒ ̴͍͚͒Ť̴̡̯̎Ḥ̴̛͛Ę̸̖̽ ̷̟̽M̷̧͌̅Í̸̡̬̊D̷̘̩̈̉D̸͉̍L̷̻̒̏Ȩ̴̗́| 12pts | 21pts | 33pts `+3pts`*
+Total | | | | **135pts** `+5pts`*
+
+\* possible extra credit points

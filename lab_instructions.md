@@ -42,7 +42,7 @@ Here are some test cases for you to work with:
 - kayak
 - Bob
 
-Extra credit (5pts): Have the program also work for strings with punctuation and whitespace.
+Extra credit (2pts): Have the program also work for strings with punctuation and whitespace.
 - Taco Cat
 - A man, a plan, a canal: Panama!
 
@@ -357,14 +357,15 @@ Create a program called `void_decipher.py` that:
 
 - Reads the intercepted file `thevoid_conversation.txt`
 - Decodes each message based on our evidence
-- Prints the conversation in real-time as it unfolds, with timestamps
 - Saves the full decoded conversation to `void_decoded.txt`
 - Key intelligence extracted (what are they planning? when? where? what equipment?)
+- Extra credit (3pts): Prints the conversation in real-time as it unfolds, with timestamps (you can use the sped up conversation `thevoid_conversation_sped_up.txt` for testing)
 
 
 <details>
 <summary><b><kbd>🧐 Hint Please!</kbd></b></summary>
 
-> Some Gagdets at Your Disposal: `ord()`, `open(filename, 'r')`, `open(filename, 'w')`
+> * Some Gadgets at Your Disposal: `ord()`, `chr()`, `open(filename, 'r')`, `open(filename, 'w')`, `time.sleep(seconds)`
+> * (Extra credit) Timestamps are a number system too. What is the base? What are the "digits" of this number system?
 
 </details>
