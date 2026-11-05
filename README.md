@@ -13,7 +13,7 @@ Function/Method | Description | Example Usage | Docs
 `open(filename, mode='r')` | Opens a file and returns a file object. | `file = open('data.txt')` <br><br> `file = open('data.txt', 'w')` | <u>[📚](https://docs.python.org/3/builtins/functions.html#open)</u>
 `.read()` | Reads the entire contents of a file as a string. | `content = file.read()` | <u>[📚](https://docs.python.org/3/library/io.html#io.TextIOBase.read)</u>
 `.readline()` | Reads one line from the file at a time. | `line = file.readline()` | <u>[📚](https://docs.python.org/3/library/io.html#io.TextIOBase.readline)</u>
-`.readlines()` | Reads all lines into a list, each item being a string of that line (with the separating `\n` at the end). | `lines = file.readlines()` | <u>[📚](https://docs.python.org/3/library/io.html#io.IOBase.readlines)</u>
+`.readlines()` | Reads all lines into a list, each item being a string of that line (with the separating `\n` at the ends). | `lines = file.readlines()` | <u>[📚](https://docs.python.org/3/library/io.html#io.IOBase.readlines)</u>
 `.write(string)` | Writes a string to the file. | `file.write("Hello, World!")` | <u>[📚](https://docs.python.org/3/library/io.html#io.Writer.write)</u>
 `.close()` | Closing files once you're done is important. Doing so frees up system resources, avoids corruption, and allows other programs to access the file. | `file.close()` | <u>[📚](https://docs.python.org/3/library/io.html#io.IOBase.close)</u>
 
@@ -44,7 +44,7 @@ with <EXPRESSION> [as <VARIABLE>]:
   
 </td> <!-- fun. looks like the markdown renderer needs there to be no indents before this because of the code block --> 
         <td>
-            Using a context manager (the <code>with</code> keyword) automatically closes the file once you're done with it, so you don't need to manually use the <code>.close()</code> method.
+            Using a context manager (with the <code>with</code> keyword) automatically closes the file once you're done with it, so you don't need to manually use the <code>.close()</code> method.
         </td>
         <td>
 
@@ -52,7 +52,8 @@ with <EXPRESSION> [as <VARIABLE>]:
 with open('file.txt', 'r') as f:
     stuff = f.read()
     print(stuff)
-# once execution reaches here, the file is closed
+# once execution reaches here (outside the context manager),
+# the file is closed
 ```
 
 </td>
@@ -72,7 +73,7 @@ Mode | Description
 ---|---
 `'r'` | **Read** - Default value. Opens a file for reading, error if the file does not exist.
 `'w'` | **Write** - Opens a file for writing, creates the file if it does not exist. **This will overwrite the existing content.**
-`'a'` | **Append** - Opens a file for appending, creates the file if it does not exist. New data is added to the end.
+`'a'` | **Append** - Opens a file for appending, creates the file if it does not exist. New data is added to the end when writing.
 `'r+'` | **Read/Write** - Opens a file for both reading and writing.
 
 
@@ -84,7 +85,7 @@ Method | Description | Example | Result
 ---|---|---|---
 `.strip(chars=None)` | Removes leading and trailing characters (whitespace by default). | `"  hello world\n".strip()` <br><br> `"Hello World!".strip("!")` | `"hello world"` <br><br> `"Hello World"`
 `.split(sep=None)` | Splits a string into a list of substrings based on whitespace by default. Be wary of change in behavior when specifying `sep` vs. not. You can read more in the [docs](https://docs.python.org/3/builtins/stdtypes.html#str.split). | `"Na Na Na\nBatman".split()` <br><br> `"apple,banana,grape".split(',')` | `['Na', 'Na', 'Na', 'Batman']` <br><br> `['apple', 'banana', 'grape']`
-`.join(iterable)` | Joins elements of a list into a single string using a specified separator. | `"-".join(['2024', '03', '11'])` | `"2024-03-11"`
+`.join(iterable)` | Joins elements of a list into a single string using the string as the separator. | `"-".join(['2024', '03', '11'])` | `"2024-03-11"`
 `.replace(old, new)` | Replaces occurrences of a substring with another substring. | `"Omg, a cat! I love cats".replace("cat", "dog")` | `'Omg, a dog! I love dogs'`
 `.lower()` | Converts all characters in the string to lowercase. | `"Hello World".lower()` | `"hello world"`
 `.upper()` | Converts all characters in the string to uppercase. | `"Hello World".upper()` | `"HELLO WORLD"`
@@ -107,8 +108,7 @@ You can use the slicing operator on any sequence (strings are also sequences �
 Syntax | Description | Example | Result
 ---|---|---|---
 `<str>[index]` | Returns the character at the given `index` | `"I love butter"[4]` <br><br> `"I love butter"[-1]` | `'v'` <br><br> `'r'`
-`<str>[start:stop]` | Returns the substring in the interval **[start, stop)**. In other words, from `start` inclusive to `stop` exclusive. Both `start` and `stop` can be omitted to represent the rest of the string from the beginning or end. | ` "I love butter"[7:11]` <br><br> `"I love butter"[:11]` <br><br> `"I love butter"[-6:]` | `'butt'` <br><br> `'I love butt'` <br><br> `'butter'
-`
+`<str>[start:stop]` | Returns the substring in the interval **[start, stop)**. In other words, from `start` inclusive to `stop` exclusive. Both `start` and `stop` can be omitted to represent the rest of the string from the beginning or end. | ` "I love butter"[7:11]` <br><br> `"I love butter"[:11]` <br><br> `"I love butter"[-6:]` | `'butt'` <br><br> `'I love butt'` <br><br> `'butter'`
 `<str>[start:stop:step]` | Returns the substring in the interval **[start, stop)** with a step size of `step` (defaults to `1`) | `"0123456789"[::2]` <br><br> `"I love butter"[2:-1:2]` <br><br> `"I love butter"[2:-2:2]` <br><br> `"I love butter"[::-1]` | `'02468'` <br><br> `'lv ut'` <br><br> `'lv ut'` <br><br> `'rettub evol I'`
 
 #### Other Useful Functions
@@ -116,7 +116,7 @@ Syntax | Description | Example | Result
 Function | Description | Example | Result
 ---|---|---|---
 `chr(integer)` | Returns the Unicode (extension of ASCII) character represented by the `integer` given | `chr(65)` <br><br> `chr(129505)` | `'A'` <br><br> `'🧡'`
-`ord(character)` | Returns the Unicode (extension of ASCII) number assigned to the given `character`. This is the inverse of `chr()` | `ord('A')` <br><br> `ord('🧡'))` | `65` <br><br> `129505`
+`ord(character)` | Returns the Unicode (extension of ASCII) number assigned to the given `character`. This is the inverse of `chr()` | `ord('A')` <br><br> `ord('🧡')` | `65` <br><br> `129505`
 `time.sleep(seconds)` | Suspends code execution for `seconds` amount of seconds. A float can be given for subsecond precision. Ensure that you've imported the `time` module prior to running this: `import time` | `time.sleep(5)` | * does nothing for 5 seconds
 
 
