@@ -24,7 +24,7 @@ These challenges are solvable with what you already know. There are hints\* give
 
 </details>
 
-\* programming trains you to deconstruct complex problems into logical steps, invent creative solutions from scratch, and view failures as data points to adapt to change. Those are the skills you really want to learn. If you rely on the hints without spending time and effort trying to solve the problem yourself however, you will learn less of those skills which will make your future programming endeavors, classes, and tests more difficult for you. For example, the last challenge in Lab 4 has been very difficult for past students. If you practice doing the challenges up until that one without using the hints, you will more likely have an eaasier time solving that challenge.. (hopefully!)
+\* programming trains you to deconstruct complex problems into logical steps, invent creative solutions from scratch, and view failures as data points to adapt to change. Those are the skills you really want to learn. If you rely on the hints without spending time and effort trying to solve the problem yourself however, you will learn less of those skills which will make your future programming endeavors, classes, and tests more difficult for you. For example, the last challenge in Lab 4 has been very difficult for past students. If you practice by doing the challenges up until that one without using the hints, you will more likely have an easier time solving that challenge.. (hopefully!)
 
 ## Lab 4a: Palindromes
 A palindrome is a word, phrase, or sequence that reads the same forwards and backwards (ignoring spaces, punctuation, and capitalization). Examples: "racecar", "madam", "taco cat", "A man, a plan, a canal: Panama!"
@@ -42,7 +42,7 @@ Here are some test cases for you to work with:
 - kayak
 - Bob
 
-Extra credit (5pts): Have the program also work for strings with punctuation and whitespace.
+Extra credit (2pts): Have the program also work for strings with punctuation and whitespace.
 - Taco Cat
 - A man, a plan, a canal: Panama!
 
@@ -51,7 +51,7 @@ Extra credit (5pts): Have the program also work for strings with punctuation and
 <summary><b><kbd>🧐 Hint Please!</kbd></b></summary>
 
 > ### There a many ways to do this. 
-> Thinking about how you can use one or more of the following functions may help: `lower()`, `replace()`, `strip()`, `reversed()`, `split()`, `join()`, `for` or `while`
+> Thinking about how you can use one or more of the following functions or tools to help you: `lower()`, `replace()`, `strip()`, `reversed()`, `split()`, `join()`, `for` or `while`
 
 </details>
 
@@ -99,7 +99,7 @@ How about converting back from hex to decimal?
 
 </details>
 
-### Lab4b
+### Lab 4b: Decimal to Hexadecimal
 
 Create a program `decimal_to_hexadecimal.py` that converts decimal to hexadecimal. This will be your **Lab 4B**.
 
@@ -124,7 +124,7 @@ Just note that it is much easier to have the output (hexadecimal) be in a string
 
 </details>
 
-### Lab 4c
+### Lab 4c: Emotional to Decimal
 
 Our base can be whatever number we want though, and so can the symbols we use as our digits. We don't have to start with the numbers we know and love. 
 
@@ -132,7 +132,7 @@ For **Lab 4c**, we will be using a number system with base 3 and for the digits,
 
 😭😐🥰
 
-form left to right, they represent **none** (😭) to the **maximum value** (🥰) that can be represented by one digit in this number system.
+From left to right, they represent **none** (😭) to the **maximum value** (🥰) that can be represented by one digit in this number system.
 
 We will call this number system "emotional".
 
@@ -144,8 +144,8 @@ Create a program `emotional_to_decimal.py` that converts emotional to decimal.
 > ***Things to think about***
 > 
 > * What number represents "none"?
-> * What would be the maximum number representable by a digit in base 3? 
-> * What about in base 2?
+> * What would be the maximum number representable by a single digit in base 3? 
+> * What about for base 2?
 > * If you write out what the number would be using regular numbers as digits, does that make it easier to understand? can you work backwards from there?
 > 
 > ***Some Useful Tools***
@@ -154,9 +154,8 @@ Create a program `emotional_to_decimal.py` that converts emotional to decimal.
 > |:---------|:---------------------|:--------|
 > | **String Processing** | `len()` | Get length of hex string |
 > | | String indexing `a[i]` | Access each digit |
-> | | `.upper()` | Convert to uppercase for consistent processing |
 > | | `for` loop | Iterate through each digit |
-> | **Digit Conversion** | `if/elif/else` | Convert eomtions to numbers |
+> | **Digit Conversion** | `if/elif/else` | Convert emotions to numbers |
 > | **Math Operations** | `**` (exponentiation) | Calculate powers of 16 |
 > | | `*` (multiplication) | Multiply digit by place value |
 > | | `+` (addition) | Accumulate total |
@@ -166,7 +165,7 @@ Create a program `emotional_to_decimal.py` that converts emotional to decimal.
 ---
 
 ## Lab 4d: Clean lyrics!
-Radio stations that play music really hates curse words, profanity, and very explicit lyrics. So they would usually blur curse words like sh\*t, b\*tch, and many more! 
+Radio stations that play music really hate curse words, profanity, and very explicit lyrics. So they would usually blur curse words like sh\*t, b\*tch, and many more! 
 
 **The rules for cleaning:**
 - Replace each character in the curse word with * (e.g., "shit" becomes "****")
@@ -191,7 +190,7 @@ You have some textfiles of song lyrics that you can test on: `rap_god.txt`, `sno
 > - Remember, you can iterate through a line by converting a line into a list 
 > - Alternatevely, you can use the `replace()` function for strings (however, this is much trickier)
 > - You can nest a read and write function
-> - You can account for different 
+> - What happens when you multiply a string by an integer?
 > 
 > Some functions/operations that may serve useful: `open()`, `readlines()`, `split()`, `lower> ()`, `replace()`
 
@@ -357,14 +356,15 @@ Create a program called `void_decipher.py` that:
 
 - Reads the intercepted file `thevoid_conversation.txt`
 - Decodes each message based on our evidence
-- Prints the conversation in real-time as it unfolds, with timestamps
 - Saves the full decoded conversation to `void_decoded.txt`
 - Key intelligence extracted (what are they planning? when? where? what equipment?)
+- Extra credit (3pts): Prints the conversation in real-time as it unfolds, with timestamps (you can use the sped up conversation `thevoid_conversation_sped_up.txt` for testing)
 
 
 <details>
 <summary><b><kbd>🧐 Hint Please!</kbd></b></summary>
 
-> Some Gagdets at Your Disposal: `ord()`, `open(filename, 'r')`, `open(filename, 'w')`
+> * Some Gadgets at Your Disposal: `ord()`, `chr()`, `open(filename, 'r')`, `open(filename, 'w')`, `time.sleep(seconds)`
+> * (Extra credit) Timestamps are a number system too. What is the base? What are the "digits" of this number system?
 
 </details>
